@@ -25,7 +25,7 @@ def countdown(stop):
     return f"{difference.days}", f"{count_hours}", f"{count_minutes}"
 
 @bot.slash_command(guild_ids=testingservers, name="countdown", description="Furina banner countdown!")
-async def countdown(ctx):
+async def countdown_command(ctx):
     endtime = datetime.datetime(2023, 11, 8, 10, 0, 0) #modifying end date (you may modify it according to timezone for different coding platforms)
     if endtime <= datetime.datetime.now():
         await ctx.respond("**Furina is here! Now go pull for her!**")
