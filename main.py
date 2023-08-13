@@ -28,7 +28,7 @@ def countdown(stop):
 async def countdown(ctx):
     endtime = datetime.datetime(2023, 11, 8, 10, 0, 0) #modifying end date (you may modify it according to timezone for different coding platforms)
     if endtime <= datetime.datetime.now():
-        await ctx.respond("Focalors is here! Now go pull for her~")
+        await ctx.respond("**Furina is here! Now go pull for her!**")
         return
     end_d, end_h, end_m = countdown(endtime) #you may add `end_s` if needed
     font = ImageFont.truetype("Blue Yellow.ttf", 270) #importing font
@@ -37,7 +37,6 @@ async def countdown(ctx):
     edit_cd.text((293,476), str(end_d), font=font, anchor="mm") #you may modify their coordinates if template was changed
     edit_cd.text((765,476), str(end_h), font=font, anchor="mm")
     edit_cd.text((1237,476), str(end_m), font=font, anchor="mm")
-    #edit_cd.text((x,y), str(end_s), font=font) #this may be enabled if seconds countdown is required
     cd_image.save("edited_cd.png") #save the edited picture
     await ctx.respond("", file=discord.File('edited_cd.png')) #call the edited picture file and send it in channel
 
